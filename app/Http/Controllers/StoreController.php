@@ -108,6 +108,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
+
         $cv = new Store();
 
         $cv->nom_produit = $request->input('nom');
@@ -121,9 +122,9 @@ class StoreController extends Controller
 
         $cv->save();
 
-        session()->flash('success', 'cv save successful !');
+        session()->flash('success', 'store save successful !');
 
-        return view('page.add_store');
+        return view('page_admin.add_store');
     }
 
     /**

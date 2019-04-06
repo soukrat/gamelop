@@ -5,6 +5,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
+
                 <form action="{{ url('store') }}" method="post" enctype="multipart/form-data">
 
                     {{ csrf_field() }}
